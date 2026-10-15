@@ -1,0 +1,23 @@
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    padding-bottom: 0.6rem;
+    border-bottom: 3px solid var(--color-secondary);
+    width: fit-content;
+}
+
+.section-heading p {
+    max-width: 38rem;
+    margin: 0;
+}
+
+.section-heading--center {
+    align-items: center;
+    text-align: center;
+}

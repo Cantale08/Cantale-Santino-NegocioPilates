@@ -1,0 +1,35 @@
+.admin__header {
+    margin-bottom: 2.5rem;
+}
+
+.admin__header h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+}
+
+.admin__header p {
+    max-width: 38rem;
+    margin: 0;
+}
+
+.admin__layout {
+    display: grid;
+    grid-template-columns: minmax(18rem, 24rem) 1fr;
+    align-items: start;
+    gap: 2rem;
+}
+
+.admin__layout > section {
+    min-width: 0;
+}
+
+.admin__layout h2#admin-listado {
+    margin: 0 0 1rem;
+    font-size: 1.9rem;
+}
+
+@media (max-width: 62rem) {
+    .admin__layout {
+        grid-template-columns: 1fr;
+    }
+}

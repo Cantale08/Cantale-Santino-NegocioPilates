@@ -1,0 +1,23 @@
+.about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.about__inner img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.about__inner p {
+    max-width: 34rem;
+    margin: 0 0 1rem;
+}
+
+@media (max-width: 52rem) {
+    .about__inner {
+        grid-template-columns: 1fr;
+    }
+}

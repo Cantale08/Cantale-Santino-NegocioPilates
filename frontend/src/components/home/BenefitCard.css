@@ -1,0 +1,24 @@
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: center;
+}
+
+.benefit-card img {
+    width: 100%;
+    max-width: 13rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.benefit-card h3 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.benefit-card p {
+    max-width: 16rem;
+    margin: 0;
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640">
+    <defs>
+        <clipPath id="arch">
+            <path d="M40 640V300a260 260 0 0 1 520 0v340z" />
+        </clipPath>
+    </defs>
+    <rect width="600" height="640" fill="#F7F3EE" />
+    <path d="M40 640V300a260 260 0 0 1 520 0v340z" fill="#A8B8A5" />
+    <g clip-path="url(#arch)">
+        <path d="M100 640V310a200 200 0 0 1 400 0v330z" fill="#C5D0C2" />
+        <circle cx="300" cy="260" r="78" fill="#F7F3EE" />
+        <circle cx="300" cy="260" r="110" fill="none" stroke="#F7F3EE" stroke-width="3" opacity=".6" />
+        <rect y="520" width="600" height="120" fill="#6F8A6E" />
+        <rect y="520" width="600" height="10" fill="#4B654B" opacity=".5" />
+        <rect x="150" y="440" width="12" height="80" rx="6" fill="#F7F3EE" />
+        <rect x="150" y="480" width="300" height="22" rx="11" fill="#F7F3EE" />
+        <rect x="170" y="500" width="10" height="26" rx="4" fill="#E8DFD2" />
+        <rect x="420" y="500" width="10" height="26" rx="4" fill="#E8DFD2" />
+        <rect x="220" y="446" width="130" height="34" rx="14" fill="#4B654B" />
+        <rect x="360" y="456" width="70" height="24" rx="12" fill="#F7F3EE" />
+        <path d="M162 470h58" stroke="#4B654B" stroke-width="4" stroke-dasharray="4 5" />
+        <g fill="#4B654B">
+            <ellipse cx="90" cy="500" rx="16" ry="76" transform="rotate(-18 90 500)" />
+            <ellipse cx="130" cy="520" rx="14" ry="62" transform="rotate(14 130 520)" />
+            <ellipse cx="60" cy="540" rx="12" ry="54" transform="rotate(-38 60 540)" />
+        </g>
+        <g fill="#2F4430">
+            <ellipse cx="520" cy="505" rx="14" ry="68" transform="rotate(20 520 505)" />
+            <ellipse cx="485" cy="530" rx="12" ry="54" transform="rotate(-12 485 530)" />
+        </g>
+    </g>
+</svg>

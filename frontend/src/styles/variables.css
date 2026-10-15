@@ -1,0 +1,30 @@
+:root {
+    /* Paleta definida en el boceto */
+    --color-bg: #f7f3ee;
+    --color-secondary: #a8b8a5;
+    --color-accent: #6f8a6e;
+
+    /* Tonos derivados que garantizan contraste AA para texto y botones */
+    --color-accent-dark: #4b654b;
+    --color-deep: #2f4430;
+    --color-secondary-light: #c5d0c2;
+    --color-surface: #fdfbf8;
+    --color-surface-tint: #ecf0e9;
+    --color-border: #ddd6ca;
+    --color-border-strong: #7c8a7a;
+    --color-text: #2b352b;
+    --color-text-muted: #556055;
+    --color-danger: #a33b34;
+    --color-danger-dark: #7f2b26;
+
+    --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --font-body: "Lora", Georgia, "Times New Roman", serif;
+
+    --radius-md: 0.6rem;
+    --radius-lg: 1.1rem;
+    --radius-pill: 999px;
+
+    --shadow-sm: 0 1px 3px rgba(47, 68, 48, 0.08);
+    --shadow-md: 0 8px 24px rgba(47, 68, 48, 0.12);
+    --shadow-lg: 0 14px 40px rgba(47, 68, 48, 0.2);
+}

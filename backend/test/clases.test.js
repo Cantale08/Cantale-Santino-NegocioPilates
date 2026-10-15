@@ -166,6 +166,31 @@ test("las rutas y métodos no implementados mantienen el formato de error", asyn
     assertError(await request("/api/clases/1", "PATCH", clase), 404, Messages.ROUTE_NOT_FOUND);
 });
 
+test("permite solicitudes del frontend mediante CORS y rechaza otros orígenes", async () => {
+    const preflight = (origin) => fetch(`${baseUrl}/api/clases/1`, {
+        method: "OPTIONS",
+        headers: {
+            Origin: origin,
+            "Access-Control-Request-Method": "PUT",
+            "Access-Control-Request-Headers": "content-type"
+        }
+    });
+
+    const allowed = await preflight("http://localhost:5173");
+    assert.equal(allowed.status, 204);
+    assert.equal(allowed.headers.get("access-control-allow-origin"), "http://localhost:5173");
+    assert.match(allowed.headers.get("access-control-allow-methods"), /PUT.*DELETE/);
+
+    const denied = await preflight("http://sitio-externo.com");
+    assert.equal(denied.headers.get("access-control-allow-origin"), null);
+
+    const withError = await fetch(`${baseUrl}/api/clases/99`, {
+        headers: { Origin: "http://localhost:5173" }
+    });
+    assert.equal(withError.status, 404);
+    assert.equal(withError.headers.get("access-control-allow-origin"), "http://localhost:5173");
+});
+
 test("cada instancia comienza con su propio array vacío", async () => {
     await request("/api/clases", "POST", clase);
     const anotherServer = createApp().listen(0, "127.0.0.1");
