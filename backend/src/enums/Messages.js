@@ -1,0 +1,20 @@
+export const Messages = Object.freeze({
+    CLASE_NOT_FOUND: "La clase no existe.",
+    INVALID_DATA: "Los datos enviados son inválidos.",
+    INVALID_ID: "El ID debe ser un número entero positivo.",
+    REQUIRED_FIELDS: "Se requieren tipo, dia, horario, cupoMaximo e instructorId.",
+    UNKNOWN_FIELDS: "Los datos contienen campos no permitidos.",
+    INVALID_TIPO: "El tipo debe ser un texto no vacío.",
+    INVALID_DIA: "El día debe ser lunes, martes, miercoles, jueves, viernes, sabado o domingo.",
+    INVALID_HORARIO: "El horario debe tener formato HH:mm, entre 00:00 y 23:59.",
+    INVALID_CUPO: "El cupo máximo debe ser un número entero positivo.",
+    INVALID_INSTRUCTOR: "El ID del instructor debe ser un número entero positivo.",
+    DUPLICATED_RESOURCE: "Ya existe una clase con los mismos datos.",
+    ROUTE_NOT_FOUND: "La ruta solicitada no existe.",
+    INVALID_JSON: "El cuerpo de la solicitud no contiene JSON válido.",
+    PAYLOAD_TOO_LARGE: "El cuerpo de la solicitud supera el límite de 100 KB.",
+    INTERNAL_ERROR: "Ocurrió un error interno del servidor.",
+    SERVER_STARTED: "API de Pilates escuchando en el puerto",
+    SERVER_START_ERROR: "No se pudo iniciar el servidor.",
+    INVALID_PORT: "PORT debe ser un número entero entre 1 y 65535."
+});
