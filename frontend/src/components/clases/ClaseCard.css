@@ -4,12 +4,25 @@
     border-radius: var(--radius-lg);
     background: var(--color-surface);
     box-shadow: var(--shadow-sm);
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.clase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .clase-card img {
     width: 100%;
     aspect-ratio: 3 / 3.4;
     object-fit: cover;
+    transition: transform 240ms ease;
+}
+
+.clase-card:hover img {
+    transform: scale(1.03);
 }
 
 .clase-card__body {
@@ -28,4 +41,16 @@
 .clase-card__schedule {
     color: var(--color-accent-dark);
     font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clase-card,
+    .clase-card img {
+        transition: none;
+    }
+
+    .clase-card:hover,
+    .clase-card:hover img {
+        transform: none;
+    }
 }
