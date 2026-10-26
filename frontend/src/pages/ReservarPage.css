@@ -1,0 +1,43 @@
+.reservar__header {
+    margin-bottom: 2rem;
+}
+
+.reservar__header h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+}
+
+.reservar__header p {
+    max-width: 40rem;
+    margin: 0 0 0.5rem;
+}
+
+.reservar__filtro {
+    max-width: 20rem;
+    margin-bottom: 1.5rem;
+}
+
+.reservar__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.reservar__confirmacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-tint);
+}
+
+.reservar__confirmacion p {
+    margin: 0;
+}

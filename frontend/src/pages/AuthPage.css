@@ -1,0 +1,33 @@
+.auth {
+    display: grid;
+    justify-items: center;
+}
+
+.auth__card {
+    width: min(100% - 2rem, 28rem);
+}
+
+.auth__card h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.auth__intro {
+    margin: 0 0 1.5rem;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.auth__alt {
+    margin: 1.25rem 0 0;
+    text-align: center;
+}

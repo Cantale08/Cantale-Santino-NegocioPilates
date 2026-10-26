@@ -7,6 +7,8 @@ export default function ConfirmDialog({
     message,
     confirmLabel = "Confirmar",
     cancelLabel = "Cancelar",
+    confirmVariant = "danger",
+    loadingText = "Eliminando...",
     loading = false,
     onConfirm,
     onCancel
@@ -65,10 +67,10 @@ export default function ConfirmDialog({
                         {cancelLabel}
                     </Button>
                     <Button
-                        variant="danger"
+                        variant={confirmVariant}
                         onClick={onConfirm}
                         loading={loading}
-                        loadingText="Eliminando..."
+                        loadingText={loadingText}
                     >
                         {confirmLabel}
                     </Button>

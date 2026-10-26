@@ -1,0 +1,29 @@
+.turnos-table__detail {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.turno-badge {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.turno-badge--reservado {
+    background: var(--color-surface-tint);
+    color: var(--color-deep);
+}
+
+.turno-badge--cancelado {
+    background: #f4dedc;
+    color: var(--color-danger-dark);
+}
+
+.turno-badge--finalizado {
+    background: #ebe7df;
+    color: var(--color-text-muted);
+}

@@ -42,6 +42,17 @@
     border-bottom-color: var(--color-accent);
 }
 
+.header__session {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header__user {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .header__toggle {
     display: none;
     place-items: center;
@@ -75,6 +86,10 @@
 
     .header__nav.is-open {
         display: flex;
+    }
+
+    .header__session {
+        flex-wrap: wrap;
     }
 
     .header__links {

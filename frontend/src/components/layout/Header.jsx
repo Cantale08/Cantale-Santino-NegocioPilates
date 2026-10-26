@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { NAV_LINKS } from "../../data/contenido.js";
+import { NAV_LINKS, NAV_LINKS_ADMIN, NAV_LINKS_CLIENTE } from "../../data/contenido.js";
+import { useAuth } from "../../hooks/useAuth.js";
 import Button from "../ui/Button.jsx";
 import { CloseIcon, MenuIcon } from "../ui/Icons.jsx";
 import Logo from "./Logo.jsx";
@@ -8,6 +9,12 @@ import "./Header.css";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { usuario, logout } = useAuth();
+    const links = [
+        ...NAV_LINKS,
+        ...(usuario?.rol === "cliente" ? NAV_LINKS_CLIENTE : []),
+        ...(usuario?.rol === "administrador" ? NAV_LINKS_ADMIN : [])
+    ];
 
     useEffect(() => {
         if (!menuOpen) {
@@ -43,7 +50,7 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                 >
                     <ul className="header__links">
-                        {NAV_LINKS.map((link) => (
+                        {links.map((link) => (
                             <li key={link.to}>
                                 {link.to.includes("#") ? (
                                     <Link to={link.to}>{link.label}</Link>
@@ -55,7 +62,24 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
-                    <Button to="/#clases" size="sm">
+                    {usuario ? (
+                        <div className="header__session">
+                            <span className="header__user">Hola, {usuario.nombre}</span>
+                            <Button variant="secondary" size="sm" onClick={logout}>
+                                Cerrar sesión
+                            </Button>
+                        </div>
+                    ) : (
+                        <div className="header__session">
+                            <Button to="/login" variant="secondary" size="sm">
+                                Ingresar
+                            </Button>
+                            <Button to="/registro" variant="ghost" size="sm">
+                                Registrarme
+                            </Button>
+                        </div>
+                    )}
+                    <Button to="/reservar" size="sm">
                         Reservar clase
                     </Button>
                 </nav>

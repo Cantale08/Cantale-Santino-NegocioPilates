@@ -12,7 +12,7 @@ export default function Hero() {
                         Clases en un ambiente sereno, con equipos Reformer y el acompañamiento cercano
                         de nuestros instructores. Mejorá tu postura, tu flexibilidad y tu bienestar.
                     </p>
-                    <Button to="/#clases" size="lg">
+                    <Button to="/reservar" size="lg">
                         Reservar clase
                     </Button>
                 </div>

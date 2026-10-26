@@ -26,7 +26,7 @@ describe("HomePage", () => {
         for (const nombre of ["Beneficios", "Nuestras clases", "Sobre nosotros"]) {
             expect(screen.getByRole("heading", { level: 2, name: nombre })).toBeInTheDocument();
         }
-        expect(screen.getAllByRole("link", { name: "Reservar clase" })[0]).toHaveAttribute("href", "/#clases");
+        expect(screen.getAllByRole("link", { name: "Reservar clase" })[0]).toHaveAttribute("href", "/reservar");
         for (const image of screen.getAllByRole("img")) {
             expect(image).toHaveAttribute("alt");
         }

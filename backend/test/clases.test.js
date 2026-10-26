@@ -16,11 +16,18 @@ const clase = {
 
 let server;
 let baseUrl;
+let adminToken;
 
 beforeEach(async () => {
     server = createApp().listen(0, "127.0.0.1");
     await once(server, "listening");
     baseUrl = `http://127.0.0.1:${server.address().port}`;
+    const login = await fetch(`${baseUrl}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: "admin@shakti.com", contrasenia: "admin1234" })
+    });
+    adminToken = (await login.json()).data.token;
 });
 
 afterEach(async () => {
@@ -32,7 +39,7 @@ afterEach(async () => {
 async function request(path = "/api/clases", method = "GET", body) {
     const response = await fetch(`${baseUrl}${path}`, {
         method,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${adminToken}` },
         body: body === undefined ? undefined : JSON.stringify(body)
     });
     assert.match(response.headers.get("content-type"), /application\/json/);
@@ -153,7 +160,7 @@ test("centraliza errores de JSON malformado, cuerpo ausente y tamaño excesivo",
     ]) {
         const response = await fetch(`${baseUrl}/api/clases`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${adminToken}` },
             body
         });
         assertError({ status: response.status, body: await response.json() }, status, message);
@@ -172,7 +179,7 @@ test("permite solicitudes del frontend mediante CORS y rechaza otros orígenes",
         headers: {
             Origin: origin,
             "Access-Control-Request-Method": "PUT",
-            "Access-Control-Request-Headers": "content-type"
+            "Access-Control-Request-Headers": "content-type,authorization"
         }
     });
 

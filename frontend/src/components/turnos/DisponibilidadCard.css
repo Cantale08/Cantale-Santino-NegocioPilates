@@ -1,0 +1,40 @@
+.horario-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.horario-card h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.6rem;
+}
+
+.horario-card p {
+    margin: 0;
+}
+
+.horario-card__schedule {
+    color: var(--color-accent-dark);
+    font-weight: 600;
+}
+
+.horario-card__meta {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.horario-card__status {
+    color: var(--color-deep);
+    font-weight: 600;
+}
+
+.horario-card--completo h3 {
+    color: var(--color-text-muted);
+}

@@ -25,8 +25,17 @@ export const NAV_LINKS = [
     { to: "/#beneficios", label: "Beneficios" },
     { to: "/#clases", label: "Clases" },
     { to: "/#sobre-nosotros", label: "Sobre nosotros" },
-    { to: "/#contacto", label: "Contacto" },
-    { to: "/admin/clases", label: "Gestión de clases" }
+    { to: "/#contacto", label: "Contacto" }
+];
+
+export const NAV_LINKS_CLIENTE = [
+    { to: "/reservar", label: "Reservar" },
+    { to: "/mis-turnos", label: "Mis turnos" }
+];
+
+export const NAV_LINKS_ADMIN = [
+    { to: "/admin/clases", label: "Gestión de clases" },
+    { to: "/admin/turnos", label: "Gestión de turnos" }
 ];
 
 export const BENEFICIOS = [

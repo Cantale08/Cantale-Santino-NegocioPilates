@@ -22,10 +22,7 @@ export default function ClassesSection({ clases, loading, error, onRetry }) {
         if (clases.length === 0) {
             return (
                 <EmptyState title="Todavía no hay clases publicadas">
-                    <p>Cuando se carguen, vas a poder verlas acá.</p>
-                    <Button to="/admin/clases" variant="secondary" size="sm">
-                        Cargar una clase
-                    </Button>
+                    <p>Cuando se carguen, vas a poder verlas y reservar tu lugar acá.</p>
                 </EmptyState>
             );
         }
@@ -48,8 +45,8 @@ export default function ClassesSection({ clases, loading, error, onRetry }) {
                         Clases grupales e individuales a cargo de instructores, con camas Reformer, tabla
                         de salto y box para trabajar fuerza, equilibrio y control.
                     </SectionHeading>
-                    <Button to="/admin/clases" variant="secondary">
-                        Ver todas las clases
+                    <Button to="/reservar" variant="secondary">
+                        Ver horarios y reservar
                     </Button>
                 </div>
                 <div className="classes__content">{renderContent()}</div>

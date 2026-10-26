@@ -8,7 +8,14 @@ if (!/^\d+$/.test(rawPort) || !Number.isInteger(port) || port < 1 || port > 6553
     throw new Error(Messages.INVALID_PORT);
 }
 
-const server = createApp().listen(port, () => {
+const administrador = {
+    nombre: "Administrador",
+    apellido: "Shakti",
+    email: process.env.ADMIN_EMAIL ?? "admin@shakti.com",
+    contrasenia: process.env.ADMIN_PASSWORD ?? "admin1234"
+};
+
+const server = createApp({ administrador }).listen(port, () => {
     console.log(`${Messages.SERVER_STARTED} ${port}`);
 });
 
